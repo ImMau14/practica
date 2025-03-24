@@ -1,3 +1,7 @@
+# DirViewer
+
+[Idioma español](./README.md)
+
 A small Python application to view the address and files in the running directory.
 
 This is a practice exercise from my class, which states:
