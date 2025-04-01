@@ -46,12 +46,21 @@ from os import listdir, getcwd, system, name
 
 Two of the exercise's requirements are that the program uses macros and constants. Since they don't exist in Python in the same way as in other languages ​​like C/C++, simulations are used.
 
+This process verifies where the code is being executed (whether from **Google Colab** or locally on the system). Since the `google.colab` library is only available in Colab —redundant as it may seem— if its import fails, it means the code is being executed locally. A constant is defined to indicate whether **IS_COLAB** or not.
+
 The lambda function `CLEAR()` uses `system()` along with a ternary conditional, which checks whether the system is Windows (NT) or Linux/MacOS (POSIX), to determine the correct command to clear the screen.
 
-```
+```python
 # Constants (actually a simulation of constants)
 COLUMN = 3
 COLUMNS_WIDTH = 30
+
+try:
+	import google.colab
+	IS_COLAB = True
+
+except:
+	IS_COLAB = False
 
 # Macro (actually a simulation of a macro)
 CLEAR = lambda : system("cls" if name == 'nt' else "clear")
@@ -90,12 +99,14 @@ def formatCenter(filesList):
 
 This function displays the current address where the code is being executed and calls the `formatCenter` function to display its contents.
 
-It first clears the screen and displays the execution address. It attempts to display the file list with `formatCenter()` and the `listDir()` function as parameters, and if it fails due to permissions, it notifies you. It ends by calling the `pressEnterToContinue()` function.
+First, clear the screen, and then, using a conditional, display a message on the screen if the code is being executed in Colab, followed by the execution address. It attempts to display the file list with `formatCenter()` and the `listDir()` function as parameters, and if it fails due to permissions, it notifies you. It ends by calling the `pressEnterToContinue()` function.
 
-```
+```python
 # Function that displays the files.
 def showDir():
 	CLEAR()
+	if IS_COLAB:
+		print("\nExecuting from Colab")
 	print(f"Current directory: {getcwd()}", end = "\n\n")
 
 	try:
@@ -132,15 +143,15 @@ def menu():
 	match option:
 		case 1:
 			showDir()
-			return 1
+			return 1 # The mainloop continues
 
 		case 0:
-			return 0	
+			return 0 # The mainloop stops
 
 		case _:
 			print("Error: Invalid option")
 			pressEnterToContinue()
-			return 1
+			return 1 # The mainloop continues
 ```
 #### Main Loop
 This is the main loop, from which the menu function will be called by the loop.
