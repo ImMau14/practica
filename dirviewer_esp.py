@@ -71,4 +71,3 @@ if __name__ == "__main__":
 	while True:
 		if not menu():
 			break
-			break
