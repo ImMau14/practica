@@ -6,7 +6,7 @@ Una pequeña aplicación en Python para ver la dirección y archivos del directo
 
 Es un ejercicio de practica de mi clase, que dice:
 
-> La asignación consiste en crear una aplicación de tipo CLI que a partir de utilizar constantes y macros te permita leer el directorio actual en donde se esté ejecutando el proyecto y liste los archivos que se encuentran presentes en él, ademas de detectar si se está ejecutando en Colab o no.
+> La asignación consiste en crear una aplicación de tipo CLI que a partir de utilizar constantes y macros te permita leer el directorio actual en donde se esté ejecutando el proyecto y liste los archivos que se encuentran presentes en él, además de detectar si se está ejecutando en Colab o no.
 
 ## Interfaz
 
