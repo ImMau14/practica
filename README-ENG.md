@@ -6,7 +6,7 @@ A small Python application to view the address and files in the running director
 
 This is a practice exercise from my class, which states:
 
-> The assignment consists of creating a CLI-style application that, using constants and macros, allows you to read the current directory where the project is running and list the files present there.
+> The assignment consists of creating a CLI-type application that, using constants and macros, allows you to read the current directory where the project is being executed and list the files present in it, in addition to detecting whether it is being executed in Colab or not.
 
 ## Interface
 
