@@ -4,12 +4,19 @@ from os import listdir, getcwd, system, name
 COLUMNS = 3
 COLUMNS_WIDTH = 30
 
+try:
+	import google.colab
+	IS_COLAB = True
+
+except:
+	IS_COLAB = False
+
 # Macro (actually a simulation of a macro)
 CLEAR = lambda : system("cls" if name == 'nt' else "clear")
 
 # Function that waits for the user to press enter
 def pressEnterToContinue():
-	input("\nPress enter to continue...")
+	input("\nPress enter to continue...\n")
 	CLEAR()
 
 # Function that displays the list in format
@@ -22,6 +29,8 @@ def formatCenter(filesList):
 # Function that displays the files.
 def showDir():
 	CLEAR()
+	if IS_COLAB:
+		print("\nExecuting from Colab")
 	print(f"Current directory: {getcwd()}", end = "\n\n")
 
 	try:
@@ -47,15 +56,15 @@ def menu():
 	match opcion:
 		case 1:
 			showDir()
-			return 1
+			return 1 # The mainloop continues
 
 		case 0:
-			return 0	
+			return 0 # The mainloop stops
 
 		case _:
 			print("Error: Invalid option")
 			pressEnterToContinue()
-			return 1
+			return 1 # The mainloop continues
 
 if __name__ == "__main__":
 	# Menu Loop
