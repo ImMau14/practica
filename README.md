@@ -46,11 +46,20 @@ from os import listdir, getcwd, system, name
 
 Dos de los requisitos del ejercicio es que el programa use macros y constantes. Dado que en Python no existen de igual manera que en otros lenguajes cómo C/C++, se usan simulaciones.
 
+Aquí se realiza el proceso de verificación para determinar desde dónde se está ejecutando el código (ya sea desde **Google Colab** o de forma local en el sistema). Dado que la librería `google.colab` solo está disponible en Colab -valga la redundancia— si su importación falla, significa que el código se está ejecutando de forma local. Se define una constante que indica si **ES_COLAB** (`IS_COLAB`) o no.
+
 La función lambda `CLEAR()` usa `system()` junto a una condicional ternaria, la cual verifica si el sistema es Windows (nt) o Linux/MacOs (posix), para determinar el comando para limpiar la pantalla sea correcto.
-```
+```python
 # Constantes (en realidad es una simulación de constantes)
 COLUMN = 3
 COLUMNS_WIDTH = 30
+
+try:
+	import google.colab
+	IS_COLAB = True
+
+except:
+	IS_COLAB = False
 
 # Macro (en realidad es una simulación de macro)
 CLEAR = lambda : system("cls" if name == 'nt' else "clear")
@@ -66,7 +75,7 @@ Primero usa la función `input()`, que esperará hasta que el usuario presione l
 ```python
 # Función que espera a que el usuario presione enter
 def pressEnterToContinue():
-	input("\nPresione enter para continuar...")
+	input("\nPresione enter para continuar...\n")
 	CLEAR()
 ```
 
@@ -88,12 +97,14 @@ def formatCenter(filesList):
 
 Esta función muestra la dirección actual donde se ejecuta el código, y llama la funcion `formatCenter` para mostrar su contenido.
 
-Primero limpia la pantalla, y muestra la dirección de ejecución. Intenta mostrar la lista de archivos con `formatCenter()` y la función `listDir()`cómo parámetro, y si falla por permisos, lo notifica. Finaliza llamando la función `pressEnterToContinue()`
+Primero limpia la pantalla, y mediante una condicional, muestra un mensaje en pantalla si es Colab, seguidamente de la dirección de ejecución. Intenta mostrar la lista de archivos con `formatCenter()` y la función `listDir()`cómo parámetro, y si falla por permisos, lo notifica. Finaliza llamando la función `pressEnterToContinue()`
 
-```
+```python
 # Función que muestra los archivos.
 def showDir():
 	CLEAR()
+	if IS_COLAB:
+		print("\nEjecutando desde Colab")
 	print(f"Directorio actual: {getcwd()}", end = "\n\n")
 
 	try:
@@ -130,15 +141,15 @@ def menu():
 	match opcion:
 		case 1:
 			showDir()
-			return 1
+			return 1 # Continua el bucle principal
 
 		case 0:
-			return 0
+			return 0 # Se detiene el bucle principal
 
 		case _:
 			print("\nError: Opción no válida")
 			pressEnterToContinue()
-			return 1
+			return 1 # Continua el bucle principal
 ```
 #### Bucle principal
 Este es el bucle principal, de donde se llamará a función menu mediante el bucle.
