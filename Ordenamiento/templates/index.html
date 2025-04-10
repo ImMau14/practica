@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenamiento Carfix</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col items-center justify-center">
+    <header class="mb-8 text-center">
+        <h1 class="font-sans text-5xl font-bold text-gray-800 mb-6">Ordenamiento Carfix</h1>
+        <button id="generar-grafico" 
+                class="bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-full 
+                       shadow-lg active:bg-green-600 active:scale-95 transition-all duration-200">
+            Generar Gráfica
+        </button>
+    </header>
+    
+	<div id="grafico" class="w-full max-w-5xl h-80 bg-white rounded-xl shadow-2xl p-4 overflow-hidden flex items-center justify-center">
+		<img id="svg-graph" src="{{ url_for('static', filename='svg_graph.svg') }}" width="160" class="opacity-80 saturate-1">
+		<div id="div-loading" class="hidden flex flex-col items-center">
+			<img src="{{ url_for('static', filename='svg_loading.svg') }}" width="80" class="spinner opacity-50 saturate-1">
+			<p class="mt-5">Generando datos y cargando grafica</p>
+		</div>
+	</div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
