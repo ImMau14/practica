@@ -2,6 +2,7 @@
 
 [English language](./README-ENG.md)
 
-Ejercicios que hago para practicar.
+Ejercicios de practica.
 
 * [DirViewer](./dirviewer/README.md)
+* [Ordenamiento](,Ordenamiento/README.md)
