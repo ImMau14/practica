@@ -5,4 +5,4 @@
 Ejercicios de practica.
 
 * [DirViewer](./dirviewer/README.md)
-* [Ordenamiento](,Ordenamiento/README.md)
+* [Ordenamiento](./Ordenamiento/README.md)
