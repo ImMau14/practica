@@ -8,7 +8,32 @@
 </head>
 
 <body>
-	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnF8OLt4wzslT9DIOM-FdNZP5W6Px2e9Yqyw&s">
-	<h1>Nada</h1>
+    <!-- Contenedor principal -->
+    <main>
+        <!-- Título principal -->
+        <h1>📁 File Info</h1>
+
+        <!-- Sección de carga de archivos -->
+        <div>
+            <div id="dropZone">
+                <span>⬆️ Arrastra archivos aquí o</span>
+                <input type="file" id="fileInput" hidden />
+                <button id="uploadButton">Seleccionar archivo</button>
+                <div>
+                    <button id="startUpload">Iniciar subida</button>
+                    <button id="cancelUpload">Cancelar</button>
+                </div>
+                <div id="uploadStatus"></div>
+            </div>
+        </div>
+
+        <!-- Contenedor de metadatos -->
+        <div id="metadataContainer">
+            <h2>Detalles del archivo</h2>
+            <div id="details">
+                <!-- Los detalles se insertarán dinámicamente aquí -->
+            </div>
+        </div>
+    </main>
 </body>
 </html>
