@@ -16,12 +16,12 @@
         <!-- Sección de carga de archivos -->
         <div>
             <div id="dropZone">
-                <span>⬆️ Arrastra archivos aquí o</span>
+                <span>⬆️ {{ form }}</span>
                 <input type="file" id="fileInput" hidden>
-                <button id="uploadButton">Seleccionar archivo</button>
+                <button id="uploadButton">{{ upload }}</button>
                 <div>
-                    <button id="startUpload">Iniciar subida</button>
-                    <button id="cancelUpload">Cancelar</button>
+                    <button id="startUpload">{{ start }}</button>
+                    <button id="cancelUpload">{{ cancel }}</button>
                 </div>
                 <div id="uploadStatus"></div>
             </div>
@@ -29,7 +29,7 @@
 
         <!-- Contenedor de metadatos -->
         <div id="metadataContainer">
-            <h2>Detalles del archivo</h2>
+            <h2>{{ details }}</h2>
 			<div id="details">
                 <!-- Los detalles se insertarán dinámicamente aquí -->
             </div>

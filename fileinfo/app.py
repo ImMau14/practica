@@ -1,6 +1,8 @@
-from flask import Flask, render_template, Response, jsonify
+from flask import Flask, render_template, Response, jsonify, request
 from routes.upload import bp as upload_bp
+from utils.language import getLang
 import os
+import json
 
 app = Flask(__name__)
 
@@ -9,7 +11,15 @@ app.register_blueprint(upload_bp, url_prefix='/api')
 
 @app.route('/')
 def pagina_principal():
-	return render_template('index.html')
+	lang = getLang("indexlang.json")
+	return render_template(
+		'index.html',
+		form=lang[f"form"],
+		upload=lang[f"upload"],
+		start=lang[f"start"],
+		cancel=lang[f"cancel"],
+		details=lang[f"details"]
+	)
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=5000, debug=True)

@@ -1,0 +1,23 @@
+{
+	"es": {
+		"notFile": "Debes enviar un archivo en el campo file",
+		"voidName": "El nombre del archivo está vacío",
+		"notExtension": "El archivo no tiene extensión",
+		"notAllowed": "Extensión .{file_extension} no permitida",
+		"isWeight": "Tamaño del archivo ({mb_size:.2f} MB) excede el límite de {MAX_FILE_SIZE//1024//1024} MB",
+		"txt": "Error decodificando el archivo TXT (UTF-8) - {error}",
+		"pdf": "Error leyendo el PDF - {error}",
+		"server": "Error en el servidor: {error}"
+	},
+
+	"en": {
+		"notFile": "You must send a file in the file field",
+		"voidName": "The file name is empty",
+		"notExtension": "The file has no extension",
+		"notAllowed": "Extension .{file_extension} not allowed",
+		"isWeight": "File size ({mb_size:.2f} MB) exceeds the limit of {MAX_FILE_SIZE//1024//1024} MB",
+		"txt": "Error decoding the TXT file (UTF-8) - {error}",
+		"pdf": "Error reading the PDF - {error}",
+		"server": "Server error: {error}"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"es": {
+		"form": "Arrastra archivos aquí o",
+		"upload": "Seleccionar archivo",
+		"start": "Iniciar subida",
+		"cancel": "Cancelar",
+		"details": "Detalles del archivo"
+	},
+
+	"en": {
+		"form": "Drag files here or",
+		"upload": "Select file",
+		"start": "Start upload",
+		"cancel": "Cancel",
+		"details": "File details"
+	}
+}

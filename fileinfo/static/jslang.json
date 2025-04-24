@@ -1,0 +1,37 @@
+{
+	"es": {
+		"selected": "Seleccionado {fileName} {fileSize} MB",
+		"selectAFile": "Debes seleccionar un archivo",
+		"uploading": "Subiendo {fileName} {fileSize} MB",
+		"processed": "{fileName} {fileSize} MB procesado",
+		"error": "Error: {error}",
+		"server_error": "Error del servidor: {error}",
+		"unknown_error": "Error desconocido: {statusCode}",
+		"upload_cancelled": "Subida cancelada por el usuario",
+		"network_error": "Error de red desconocido",
+		"metadata": {
+			"file_name": "<p>Nombre: {filename}</p>",
+			"extension": "<p>Extensión: {extension}</p>",
+			"size_bytes": "<p>Tamaño en Bytes: {size_bytes}</p>",
+			"size_mb": "<p>Tamaño en MB: {size_mb}</p>"
+		}
+	},
+
+	"en": {
+		"selected": "Selected {fileName} {fileSize} MB",
+		"selectAFile": "You must select a file",
+		"uploading": "Uploading {fileName} {fileSize} MB",
+		"processed": "{fileName} {fileSize} MB processed",
+		"error": "Error: {error}",
+		"server_error": "Server error: {error}",
+		"unknown_error": "Unknown error: {status}",
+		"upload_cancelled": "Upload cancelled by the user",
+		"network_error": "Unknown network error",
+		"metadata": {
+			"file_name": "<p>Name: {filename}</p>",
+			"extension": "<p>Extension: {extension}</p>",
+			"size_bytes": "<p>Size in Bytes: {size_bytes}</p>",
+			"size_mb": "<p>Size in MB: {size_mb}</p>"
+		}
+	}
+}

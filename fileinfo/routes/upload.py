@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, Blueprint
 from werkzeug.utils import secure_filename
 from markupsafe import escape
 from PyPDF2 import PdfReader
+from utils.language import getLang
 
 bp = Blueprint('upload', __name__)
 
@@ -12,6 +13,8 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 @bp.route('/upload', methods=['POST'])
 def upload_file():
+	lang = getLang("uploadlang.json")
+
 	response = {
 		'success': False,
 		'error': '',
@@ -21,24 +24,24 @@ def upload_file():
 	try:
 		# Verificar si se envió el archivo
 		if 'file' not in request.files:
-			raise ValueError('Debes enviar un archivo en el campo "file"')
+			raise ValueError(lang["notFile"])
 
 		file = request.files['file']
 
 		# Validar nombre de archivo
 		if file.filename.strip() == '':
-			raise ValueError('El nombre del archivo está vacío')
+			raise ValueError(lang["voidName"])
 
 		filename = secure_filename(file.filename)
 
 		# Validar extensión del archivo
 		if '.' not in filename:
-			raise ValueError('El archivo no tiene extensión')
+			raise ValueError(lang["notExtension"])
 
 		file_extension = filename.rsplit('.', 1)[1].lower()
 		if file_extension not in ALLOWED_EXTENSIONS:
 			allowed = ', '.join(sorted(ALLOWED_EXTENSIONS))
-			raise ValueError(f'Extensión .{file_extension} no permitida')
+			raise ValueError(lang["notAllowed"].format(file_extension=file_extension))
 
 		# Validar tamaño del archivo
 		file.seek(0, os.SEEK_END)
@@ -47,7 +50,7 @@ def upload_file():
 
 		if file_size > MAX_FILE_SIZE:
 			mb_size = file_size / (1024 * 1024)
-			raise ValueError(f'Tamaño del archivo ({mb_size:.2f} MB) excede el límite de {MAX_FILE_SIZE//1024//1024} MB')
+			raise ValueError(lang["isWeight"].format(mb_size=mb_size, MAX_FILE_SIZE=MAX_FILE_SIZE))
 
 		data = {
 			'filename': filename,
@@ -63,7 +66,7 @@ def upload_file():
 				data['content'] = content
 
 			except UnicodeDecodeError as e:
-				raise ValueError(f'Error decodificando el archivo TXT (UTF-8) - {str(e)}')
+				raise ValueError(lang["txt"].format(error=str(e)))
 		
 		elif file_extension == 'pdf':
 			try:
@@ -79,7 +82,7 @@ def upload_file():
 				data['content'] = "\n".join(pdf_text)
 
 			except Exception as e:
-				raise ValueError(f'Error leyendo el PDF - {str(e)}')
+				raise ValueError(lang["pdf"].format(error=str(e)))
 
 		response.update({
 			'success': True,
@@ -93,5 +96,5 @@ def upload_file():
 		return jsonify(response), 400  # Bad Request
 
 	except Exception as e:
-		response['error'] = f'Error en el servidor: {str(e)}'
+		response['error'] = lang["server"].format(error=str(e))
 		return jsonify(response), 500  # Internal Server Error
