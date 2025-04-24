@@ -54,36 +54,33 @@ startButton.addEventListener('click', (event) => {
 		if (xhr.status === 0) return
 		const data = JSON.parse(xhr.responseText)
 
-		function getImageDataURL(file, callback) {
-			const reader = new FileReader()
-
-			  if (!(file instanceof Blob)) {
-				console.error('El archivo no es un Blob válido')
-				return
-			  }
-
-			reader.onload = (e) => {
-				callback(e.target.result)
-			}
-
-			reader.readAsDataURL(file)
+		function getImageDataURL(file) {
+			return new Promise((resolve, reject) => {
+				const reader = new FileReader()
+				reader.onload = (e) => resolve(e.target.result)
+				reader.onerror = reject
+				reader.readAsDataURL(file)
+			})
 		}
 
-		const showInfo = (file) => {
+		const showInfo = async (file) => {
 			fileDetailsDiv.innerHTML = ''
 
+			let content = ''
+
 			if (file.extension !== "txt" && file.extension !== "pdf") {
-				getImageDataURL(fileInput.files[0], (dataURL) => {
-					fileDetailsDiv.innerHTML += `<img id="preview-photo" src=${dataURL} height=100>`
-				})
+				const dataURL = await getImageDataURL(fileInput.files[0])
+				content += `<img id="preview-photo" src=${dataURL} height=100>`
 			} else {
-				fileDetailsDiv.innerHTML += `<pre>${file.content}</pre>`
+				content += `<pre>${file.content}</pre>`
 			}
 
-			fileDetailsDiv.innerHTML += `<p>Nombre: ${file.filename}</p>`
-			fileDetailsDiv.innerHTML += `<p>Extensión: ${file.extension}</p>`
-			fileDetailsDiv.innerHTML += `<p>Tamaño en Bytes: ${file.size_bytes}</p>`
-			fileDetailsDiv.innerHTML += `<p>Tamaño en MB: ${file.size_mb}</p>`
+			content += `<p>Nombre: ${file.filename}</p>`
+			content += `<p>Extensión: ${file.extension}</p>`
+			content += `<p>Tamaño en Bytes: ${file.size_bytes}</p>`
+			content += `<p>Tamaño en MB: ${file.size_mb}</p>`
+
+			fileDetailsDiv.innerHTML = content
 		}
 
 		switch (xhr.status) {
