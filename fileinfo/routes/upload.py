@@ -13,7 +13,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 @bp.route('/upload', methods=['POST'])
 def upload_file():
-	lang = getLang("uploadlang.json")
+	lang = getLang("langs/uploadlang.json")
 
 	response = {
 		'success': False,

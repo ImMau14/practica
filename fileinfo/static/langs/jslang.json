@@ -10,10 +10,10 @@
 		"upload_cancelled": "Subida cancelada por el usuario",
 		"network_error": "Error de red desconocido",
 		"metadata": {
-			"file_name": "<p>Nombre: {filename}</p>",
-			"extension": "<p>Extensión: {extension}</p>",
-			"size_bytes": "<p>Tamaño en Bytes: {size_bytes}</p>",
-			"size_mb": "<p>Tamaño en MB: {size_mb}</p>"
+			"file_name": "<li>Nombre: {filename}</li>",
+			"extension": "<li>Extensión: {extension}</li>",
+			"size_bytes": "<li>Tamaño en Bytes: {size_bytes}</li>",
+			"size_mb": "<li>Tamaño en MB: {size_mb}</li>"
 		}
 	},
 
@@ -28,10 +28,10 @@
 		"upload_cancelled": "Upload cancelled by the user",
 		"network_error": "Unknown network error",
 		"metadata": {
-			"file_name": "<p>Name: {filename}</p>",
-			"extension": "<p>Extension: {extension}</p>",
-			"size_bytes": "<p>Size in Bytes: {size_bytes}</p>",
-			"size_mb": "<p>Size in MB: {size_mb}</p>"
+			"file_name": "<li>Name: {filename}</li>",
+			"extension": "<li>Extension: {extension}</li>",
+			"size_bytes": "<li>Size in Bytes: {size_bytes}</li>",
+			"size_mb": "<li>Size in MB: {size_mb}</li>"
 		}
 	}
 }

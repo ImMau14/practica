@@ -1,0 +1,38 @@
+#progressbar-container {
+	width: 100%;
+	max-width: calc(100% - 20px);
+	margin: 20px 0px;
+	border-radius: 30px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+	border: 2px solid var(--progressbar-bd-color);
+}
+
+#progressbar-background {
+	position: relative; /* Necesario para el posicionamiento absoluto */
+	height: 25px; /* Altura fija para la barra */
+	background-color: var(--progressbar-bg-color); /* Color de fondo de la barra no cargada */
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+#progressbar-fill {
+	height: 100%;
+	background-color: var(--progressbar-fg-color);
+	transition: width 0.3s ease-in-out;
+	width: 0%; /* Esto debería ser controlado por JavaScript (ej: 50% para medio lleno) */
+}
+
+#uploadStatus {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	z-index: 1; /* Asegura que el texto esté sobre la barra */
+	margin: 0;
+	pointer-events: none; /* Permite interactuar con elementos bajo el texto */
+}

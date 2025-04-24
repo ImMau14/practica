@@ -11,7 +11,7 @@ app.register_blueprint(upload_bp, url_prefix='/api')
 
 @app.route('/')
 def pagina_principal():
-	lang = getLang("indexlang.json")
+	lang = getLang("langs/indexlang.json")
 	return render_template(
 		'index.html',
 		form=lang[f"form"],

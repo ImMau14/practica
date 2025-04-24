@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Info</title>
-	<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="/static/styles/fonts.css">
+	<link rel="stylesheet" href="/static/styles/variables.css">
+	<link rel="stylesheet" href="/static/styles/global.css">
+	<link rel="stylesheet" href="/static/styles/dropzone.css">
+	<link rel="stylesheet" href="/static/styles/progressbar.css">
+	<link rel="stylesheet" href="/static/styles/metadata.css">
 </head>
 
 <body>
@@ -14,25 +20,31 @@
         <h1>📁 File Info</h1>
 
         <!-- Sección de carga de archivos -->
-        <div>
-            <div id="dropZone">
-                <span>⬆️ {{ form }}</span>
-                <input type="file" id="fileInput" hidden>
-                <button id="uploadButton">{{ upload }}</button>
-                <div>
-                    <button id="startUpload">{{ start }}</button>
-                    <button id="cancelUpload">{{ cancel }}</button>
-                </div>
-                <div id="uploadStatus"></div>
-            </div>
-        </div>
+		<div id="dropZone">
+			<span>⬆️ {{ form }}</span> <!-- .pdf, --->
+			<input type="file" id="fileInput" hidden accept=".pdf, .txt, .png, .jpeg, .gif" hidden>
+			<button id="uploadButton" class="btn btn-green">{{ upload }}</button>
+		</div>
+
+		<div id="progressbar-container">
+			<div id="progressbar-background">
+				<div id="progressbar-fill"></div>
+				<div id="uploadStatus"></div>
+			</div>
+		</div>
+		
+
+		<div id="buttons">
+			<button id="startUpload" class="btn btn-blue">{{ start }}</button>
+			<button id="cancelUpload" class="btn btn-red">{{ cancel }}</button>
+		</div>
 
         <!-- Contenedor de metadatos -->
         <div id="metadataContainer">
             <h2>{{ details }}</h2>
-			<div id="details">
+			<ul id="details">
                 <!-- Los detalles se insertarán dinámicamente aquí -->
-            </div>
+            </ul>
         </div>
     </main>
 	<script src="{{ url_for('static', filename='app.js') }}"></script>

@@ -1,0 +1,27 @@
+:root {
+	/* Fuentes */
+	--header-font: 'Montserrat';
+	--text-font: 'Roboto';
+	
+	/* Colores #bdbdbd, #32393d, #373737, #2d2d2d, #464646 */
+	--background-color: #2d2d2d;
+	--interface-color: #32393d;
+	--border-color: #464646;
+
+	--progressbar-bg-color: #252b2e;
+	--progressbar-bd-color: #343d41;
+	--progressbar-fg-color: #185623;
+
+	--btn-disabled-text-color: #bebebe;
+	--btn-blue-color: #4d498b;
+	--btn-blue-hover-color: #5b57a8;
+	--btn-blue-active-color: #45427d;
+	--btn-red-color: #9f3538;
+	--btn-red-hover-color: #bf4043;
+	--btn-red-active-color: #8f3032;
+	--btn-red-disabled-color: #a03f41;
+	--btn-green-color: #4a983d;
+	--btn-green-hover-color: #59b748;
+	--btn-green-active-color: #438936;
+	--btn-green-disabled-color: #47833d;	
+}

@@ -1,0 +1,16 @@
+#dropZone {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 0px;
+	width: calc(100% - 20px);
+	margin: 0px 50px;
+	border: 3px dashed #677981;
+	border-radius: 15px;
+	background-color: #252b2e;
+}
+
+#uploadButton {
+	margin-left: 5px;
+}

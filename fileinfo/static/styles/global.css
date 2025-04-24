@@ -1,0 +1,131 @@
+body, html {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-family: var(--text-font);
+	background-color: var(--background-color);
+	color: white;
+}
+
+main {
+	overflow-y: auto; /* Activa el scroll vertical */
+	overflow-x: hidden; /* Evita el scroll horizontal */
+	margin: 30px 0px;
+	background-color: var(--interface-color);
+	width: calc(100% - 600px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid var(--border-color);
+	border-radius: 15px;
+	scrollbar-color: #888 transparent; /* Color de la barra y la pista */
+	position: relative; /* Asegura que no se salga del contenedor */
+}
+
+@media (max-width: 991px) {
+	main {
+		justify-content: center;
+		margin: 0px;
+		width: 100%;
+		height: 100%;
+		border: none;
+		border-radius: 0px;
+	}
+}
+
+/* Estilos para el scrollbar de main */
+main::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Scroll */
+main::-webkit-scrollbar-thumb {
+	background-color: #888;
+	border-radius: 15px;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+	background-color: #555;
+}
+
+/* Pista */
+main::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+h1, h2 {
+	font-family: var(--header-font);
+}
+
+h1 {
+	margin: 20px;
+}
+
+.btn {
+	border-radius: 10px;
+	box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.2);
+	color: white;
+	padding: 5px 15px;
+	cursor: pointer;
+	user-select: none;
+	border: none;
+	-webkit-tap-highlight-color: transparent;	
+	transition: all 0.10s ease;
+}
+
+.btn-blue {
+	background-color: var(--btn-blue-color);
+}
+
+.btn-blue:hover {
+	background-color: var(--btn-blue-hover-color);
+}
+
+.btn-blue:active {
+	background-color: var(--btn-blue-active-color);
+}
+
+.btn-red:not(.btn-disabled) {
+	background-color: var(--btn-red-color);
+}
+
+.btn-red:hover:not(.btn-disabled) {
+	background-color: var(--btn-red-hover-color);
+}
+
+.btn-red:active:not(.btn-disabled) {
+	background-color: var(--btn-red-active-color);
+}
+
+.btn-red.btn-disabled {
+	background-color: var(--btn-red-disabled-color);
+}
+
+.btn-green:not(.btn-disabled) {
+	background-color: var(--btn-green-color);
+}
+
+.btn-green:hover:not(.btn-disabled) {
+	background-color: var(--btn-green-hover-color);
+}
+
+.btn-green:active:not(.btn-disabled) {
+	background-color: var(--btn-green-active-color);
+}
+
+.btn-green.btn-disabled {
+	background-color: var(--btn-green-disabled-color);
+}
+
+.btn-disabled {
+	background-color: var(--btn-disabled-color);
+	color: var(--btn-disabled-text-color);
+	cursor: default;
+}
+
+#buttons {
+	margin-bottom: 20px;
+}
