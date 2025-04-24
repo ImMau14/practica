@@ -19,7 +19,7 @@ def upload_file():
     try:
         # Verificar si se envió el archivo
         if 'file' not in request.files:
-            raise ValueError('Debes enviar un archivo en el campo "archivo"')
+            raise ValueError('Debes enviar un archivo en el campo "file"')
 
         file = request.files['file']
 
@@ -36,7 +36,7 @@ def upload_file():
         file_extension = filename.rsplit('.', 1)[1].lower()
         if file_extension not in ALLOWED_EXTENSIONS:
             allowed = ', '.join(sorted(ALLOWED_EXTENSIONS))
-            raise ValueError(f'Extensión .{file_extension} no permitida. Extensiones válidas: {allowed}')
+            raise ValueError(f'Extensión .{file_extension} no permitida')
 
         # Validar tamaño del archivo
         file.seek(0, os.SEEK_END)
