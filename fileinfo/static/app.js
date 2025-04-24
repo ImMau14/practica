@@ -1,11 +1,12 @@
-const dropZone = document.getElementById("dropZone")
-const uploadButton = document.getElementById("uploadButton")
-const fileInput = document.getElementById("fileInput")
-const startButton = document.getElementById("startUpload")
-const cancelButton = document.getElementById("cancelUpload")
-const uploadStatusDiv = document.getElementById("uploadStatus")
+const dropZone = document.getElementById('dropZone')
+const uploadButton = document.getElementById('uploadButton')
+const fileInput = document.getElementById('fileInput')
+const startButton = document.getElementById('startUpload')
+const cancelButton = document.getElementById('cancelUpload')
+const uploadStatusDiv = document.getElementById('uploadStatus')
 
-const fileDetailsDiv = document.getElementById("details")
+// const previewImage = document.getElementById('preview-photo')
+const fileDetailsDiv = document.getElementById('details')
 
 let xhr = null;
 
@@ -38,7 +39,7 @@ startButton.addEventListener('click', (event) => {
 
 	const formData = new FormData()
 	formData.append('file', file)
-	
+
 	uploadStatusDiv.innerText = `Subiendo ${file.name} ${Math.round(file.size / (1024 ** 2))} MB`
 
 	xhr = new XMLHttpRequest()
@@ -53,11 +54,36 @@ startButton.addEventListener('click', (event) => {
 		if (xhr.status === 0) return
 		const data = JSON.parse(xhr.responseText)
 
+		function getImageDataURL(file, callback) {
+			const reader = new FileReader()
+
+			  if (!(file instanceof Blob)) {
+				console.error('El archivo no es un Blob válido')
+				return
+			  }
+
+			reader.onload = (e) => {
+				callback(e.target.result)
+			}
+
+			reader.readAsDataURL(file)
+		}
+
 		const showInfo = (file) => {
 			fileDetailsDiv.innerHTML = ''
-			for (const [key, value] of Object.entries(file)) {
-				fileDetailsDiv.innerHTML += `<p>${key}: ${value}</p>`
+
+			if (file.extension !== "txt" && file.extension !== "pdf") {
+				getImageDataURL(fileInput.files[0], (dataURL) => {
+					fileDetailsDiv.innerHTML += `<img id="preview-photo" src=${dataURL} height=100>`
+				})
+			} else {
+				fileDetailsDiv.innerHTML += `<pre>${file.content}</pre>`
 			}
+
+			fileDetailsDiv.innerHTML += `<p>Nombre: ${file.filename}</p>`
+			fileDetailsDiv.innerHTML += `<p>Extensión: ${file.extension}</p>`
+			fileDetailsDiv.innerHTML += `<p>Tamaño en Bytes: ${file.size_bytes}</p>`
+			fileDetailsDiv.innerHTML += `<p>Tamaño en MB: ${file.size_mb}</p>`
 		}
 
 		switch (xhr.status) {
