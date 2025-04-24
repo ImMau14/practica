@@ -2,4 +2,5 @@ env/
 .env
 __pycache__/
 routes/__pycache__/
+utils/__pycache__/
 
