@@ -40,9 +40,10 @@
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 10px;
     background: #1a1e20;
     border-radius: 8px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #preview-photo {
@@ -57,6 +58,15 @@
     border-radius: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     object-fit: contain;
+}
+
+#metadataContainer hr {
+	  border: none;
+	  width: 100%;
+	  height: 3px;
+	  border-radius: 2px;
+	  background-color: #677981;
+	  margin: 20px 0;
 }
 
 @media (max-width: 768px) {
@@ -77,18 +87,3 @@
     }
 }
 
-@media (max-width: 480px) {
-    #metadataContainer ul {
-        gap: 0.5vh;
-    }
-    
-    #metadataContainer li {
-        border-radius: 10px;
-        padding: 8px 10px;
-    }
-    
-    #metadataContainer pre {
-        font-size: 0.85em;
-        padding: 8px;
-    }
-}
