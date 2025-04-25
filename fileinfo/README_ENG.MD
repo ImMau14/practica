@@ -1,4 +1,4 @@
-#File Info
+# File Info
 
 [Idioma Español](./README.MD)
 
@@ -10,4 +10,4 @@ There is a file size limit of 10 MB due to memory restrictions on Render.
 
 It is deployed at: https://file-info.onrender.com.
 
-![Image](./readme images/imageEn.png)
+![Image](https://images.hive.blog/DQmWEiEkwoXtHMjcMiCThKy1QB5H6swiNCqcHQEbhhzV4EA/imageEn.png)
