@@ -61,6 +61,26 @@ dropEvents.forEach(event => {
     dropZone.addEventListener(event, e => e.preventDefault())
 })
 
+dropZone.addEventListener('dragenter', e => {
+	dropZone.classList.add('hover')
+})
+
+dropZone.addEventListener('dragleave', e => {
+	dropZone.classList.remove('hover')
+})
+
+dropZone.addEventListener('drop', e => {
+	dropZone.classList.remove('hover')
+	fileInput.files = e.dataTransfer.files
+	const file = fileInput.files[0]
+	if (metadataContainer.style.display == "flex") metadataContainer.style.display = "none"
+	
+	uploadStatusDiv.innerText = formatString(language.selected, {
+		fileName : cutText(file.name, 30),
+		fileSize : roundString((file.size / (1024 ** 2)).toString(), DECIMALS_NUM)
+	})
+})
+
 dropZone.addEventListener('drop', e => {
 	fileInput.files = e.dataTransfer.files
 	const file = fileInput.files[0]

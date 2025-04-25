@@ -9,6 +9,11 @@
 	border: 3px dashed #677981;
 	border-radius: 15px;
 	background-color: #252b2e;
+	transition-duration: 0.10s;
+}
+
+#dropZone.hover {
+	background-color: #31373c;
 }
 
 @media (max-width: 991px) {
