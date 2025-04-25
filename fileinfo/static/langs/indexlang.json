@@ -4,7 +4,8 @@
 		"upload": "Seleccionar archivo",
 		"start": "Iniciar subida",
 		"cancel": "Cancelar",
-		"details": "Detalles del archivo"
+		"details": "Detalles del archivo",
+		"initStatus": "Solo txt, pdf, png, jpeg, jpg, gif"
 	},
 
 	"en": {
@@ -12,6 +13,7 @@
 		"upload": "Select file",
 		"start": "Start upload",
 		"cancel": "Cancel",
-		"details": "File details"
+		"details": "File details",
+		"initStatus": "Only txt, pdf, png, jpeg, jpg, gif"
 	}
 }

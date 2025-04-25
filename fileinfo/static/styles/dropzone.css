@@ -11,6 +11,12 @@
 	background-color: #252b2e;
 }
 
+@media (max-width: 991px) {
+	#dropZone p {
+		font-size: var(--small-text-size);
+	}
+}
+
 #uploadButton {
 	margin-left: 5px;
 }

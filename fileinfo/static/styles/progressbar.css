@@ -8,9 +8,9 @@
 }
 
 #progressbar-background {
-	position: relative; /* Necesario para el posicionamiento absoluto */
-	height: 25px; /* Altura fija para la barra */
-	background-color: var(--progressbar-bg-color); /* Color de fondo de la barra no cargada */
+	position: relative;
+	height: 30px;
+	background-color: var(--progressbar-bg-color);
 	border-radius: 20px;
 	overflow: hidden;
 }
@@ -19,7 +19,7 @@
 	height: 100%;
 	background-color: var(--progressbar-fg-color);
 	transition: width 0.3s ease-in-out;
-	width: 0%; /* Esto debería ser controlado por JavaScript (ej: 50% para medio lleno) */
+	width: 0%;
 }
 
 #uploadStatus {
@@ -32,7 +32,13 @@
 	align-items: center;
 	justify-content: center;
 	color: white;
-	z-index: 1; /* Asegura que el texto esté sobre la barra */
+	z-index: 1;
 	margin: 0;
-	pointer-events: none; /* Permite interactuar con elementos bajo el texto */
+	pointer-events: none;
+}
+
+@media (max-width: 991px) {
+	#uploadStatus {
+		font-size: var(--small-text-size);
+	}
 }

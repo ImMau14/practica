@@ -14,14 +14,11 @@
 </head>
 
 <body>
-    <!-- Contenedor principal -->
     <main>
-        <!-- Título principal -->
         <h1>📁 File Info</h1>
 
-        <!-- Sección de carga de archivos -->
 		<div id="dropZone">
-			<span>⬆️ {{ form }}</span> <!-- .pdf, --->
+			<p>⬆️ {{ form }}</p> <!-- .pdf, --->
 			<input type="file" id="fileInput" hidden accept=".pdf, .txt, .png, .jpeg, .gif" hidden>
 			<button id="uploadButton" class="btn btn-green">{{ upload }}</button>
 		</div>
@@ -29,21 +26,18 @@
 		<div id="progressbar-container">
 			<div id="progressbar-background">
 				<div id="progressbar-fill"></div>
-				<div id="uploadStatus"></div>
+				<div id="uploadStatus">{{ initStatus }}</div>
 			</div>
 		</div>
 		
-
 		<div id="buttons">
 			<button id="startUpload" class="btn btn-blue">{{ start }}</button>
 			<button id="cancelUpload" class="btn btn-red">{{ cancel }}</button>
 		</div>
 
-        <!-- Contenedor de metadatos -->
         <div id="metadataContainer">
             <h2>{{ details }}</h2>
 			<ul id="details">
-                <!-- Los detalles se insertarán dinámicamente aquí -->
             </ul>
         </div>
     </main>

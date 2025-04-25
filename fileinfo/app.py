@@ -14,11 +14,12 @@ def pagina_principal():
 	lang = getLang("langs/indexlang.json")
 	return render_template(
 		'index.html',
-		form=lang[f"form"],
-		upload=lang[f"upload"],
-		start=lang[f"start"],
-		cancel=lang[f"cancel"],
-		details=lang[f"details"]
+		form=lang["form"],
+		upload=lang["upload"],
+		start=lang["start"],
+		cancel=lang["cancel"],
+		details=lang["details"],
+		initStatus=lang["initStatus"]
 	)
 
 if __name__ == '__main__':
