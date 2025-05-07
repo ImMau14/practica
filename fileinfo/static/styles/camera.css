@@ -1,0 +1,37 @@
+#camera-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#camera-view {
+    width: 100%;
+    max-width: 500px;
+    background: #000;
+    border-radius: 4px;
+}
+
+#photo-result {
+    max-width: 100%;
+    margin-top: 1rem;
+    border: 2px solid #42b983;
+    border-radius: 4px;
+}
+
+#photo-details {
+    background: #000;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#photo-canvas {
+    display: none;
+}
