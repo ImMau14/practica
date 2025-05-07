@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Elementos
+
     const cameraSection = document.getElementById('camera-section');
     const toggleCameraBtn = document.getElementById('toggle-camera');
     const cameraView = document.getElementById('camera-view');
@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoResult = document.getElementById('photo-result');
     const photoDetails = document.getElementById('photo-details');
 
-    // Mostrar/ocultar cámara
+
     if (toggleCameraBtn) {
         toggleCameraBtn.addEventListener('click', () => {
             cameraSection.classList.toggle('hidden');
         });
     }
 
-    // Iniciar cámara
+
     const startCamera = async () => {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Capturar foto
+
     if (captureBtn) {
         captureBtn.addEventListener('click', () => {
             photoCanvas.width = cameraView.videoWidth;
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const ctx = photoCanvas.getContext('2d');
             ctx.drawImage(cameraView, 0, 0);
 
-            // Mostrar foto
+
             photoResult.src = photoCanvas.toDataURL('image/jpeg');
             photoResult.classList.remove('hidden');
 			photoCanvas.classList.add('hidden');
 
-            // Obtener metadatos
+
             const date = new Date().toLocaleString();
             navigator.geolocation.getCurrentPosition(
                 (pos) => {
@@ -55,6 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Inicializar
+
     startCamera();
 });
