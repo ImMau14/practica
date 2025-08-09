@@ -12,10 +12,23 @@
 	<link rel="stylesheet" href="/static/styles/dropzone.css">
 	<link rel="stylesheet" href="/static/styles/progressbar.css">
 	<link rel="stylesheet" href="/static/styles/metadata.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/camera.css') }}">
 </head>
 
 <body>
-    <main>
+
+    <div id="camera-section" class="hidden">
+      <h2> Tomar Foto</h2>
+      <video id="camera-view" autoplay playsinline></video>
+      <button id="capture-btn" class="btn btn-blue">Capturar</button>
+      <canvas id="photo-canvas"></canvas>
+      <img id="photo-result" alt="Foto capturada" class="hidden">
+      <pre id="photo-details" class="hidden"></pre>
+    </div>
+
+	<button id="toggle-camera" class="btn btn-green">Mostrar Cámara</button>
+
+	<main>
         <h1>📁 File Info</h1>
 
 		<div id="dropZone">
@@ -30,7 +43,7 @@
 				<div id="uploadStatus">{{ initStatus }}</div>
 			</div>
 		</div>
-		
+
 		<div id="buttons">
 			<button id="startUpload" class="btn btn-blue">{{ start }}</button>
 			<button id="cancelUpload" class="btn btn-red">{{ cancel }}</button>
@@ -44,5 +57,6 @@
         </div>
     </main>
 	<script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="{{ url_for('static', filename='camera.js') }}"></script>
 </body>
 </html>
