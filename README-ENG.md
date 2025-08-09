@@ -4,6 +4,12 @@
 
 Exercises I do to practice.
 
-* [DirViewer](./dirviewer/README-ENG.md)
-* [Ordenamiento](./Ordenamiento/README.md) (Spanish only)
-* [File Info](./fileinfo/README_ENG.MD)
+## Python
+
+* [DirViewer](./python/dirviewer/README-ENG.md)
+* [Ordenamiento](./python/Ordenamiento/README.md) (Spanish only)
+* [File Info](./python/fileinfo/README_ENG.MD)
+
+## Rust
+
+* [Cashier](./rust/cashier/README_ENG.md)
