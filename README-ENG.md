@@ -6,10 +6,11 @@ Exercises I do to practice.
 
 ## Python
 
-* [DirViewer](./python/dirviewer/README-ENG.md)
-* [Ordenamiento](./python/Ordenamiento/README.md) (Spanish only)
-* [File Info](./python/fileinfo/README_ENG.MD)
+* [DirViewer](./python/dirviewer)
+* [Ordenamiento](./python/Ordenamiento) (Spanish only)
+* [File Info](./python/fileinfo)
 
 ## Rust
 
-* [Cashier](./rust/cashier/README_ENG.md)
+* [Cashier](./rust/cashier)
+* [Sorting](./rust/Sorting)
