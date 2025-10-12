@@ -1,0 +1,102 @@
+---
+import "@styles/main.css"
+import { AnimatedBackground } from "@components/AnimatedBackground"
+import { AvatarPhoto } from "@components/AvatarPhoto"
+
+const PAGE_TITLE = "ImMau14"
+const NAME = "Mauricio Rodríguez"
+const TECH =
+	"Python | TypeScript | Rust | Actix-web | React | TailwindCSS | Astro | SQL"
+const DESC =
+	"I am a 20-year-old systems engineering student, passionate about programming, with other hobbies such as drawing, working out, and listening to music. I hope to become a great Full-Stack Developer."
+---
+
+<html lang="es" class="h-full">
+	<head
+	>
+		<meta
+			charset="utf-8"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<meta
+			name="description"
+			content={DESC}
+		/>
+		<meta
+			name="theme-color"
+			content="#f3f3f3"
+		/>
+		<meta
+			name="description"
+			content={DESC}
+		/>
+		<title
+		>
+			{
+				PAGE_TITLE
+			}
+		</title>
+	</head>
+	<body
+		class="min-h-screen bg-gray-50"
+	>
+		<AnimatedBackground
+			className="min-h-screen flex items-center justify-center p-6"
+			client:load
+		>
+			<main
+				class="w-full max-w-2xl mx-auto px-4 sm:px-6 bg-gray-200/40 backdrop-blur rounded-xl shadow-md border border-gray-300/30 p-6 md:p-10"
+			>
+				<header
+					class="flex flex-col items-center md:flex-row gap-6"
+				>
+					<AvatarPhoto
+						className="h-32 w-32 rounded-full shrink-0"
+						client:load
+					/>
+					<div
+						class="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-2"
+					>
+						<h1
+							class="text-3xl md:text-4xl font-heading font-semibold text-gray-800 tracking-wide"
+						>
+							{
+								NAME
+							}
+						</h1>
+						<p
+							class="text-sm text-gray-600"
+						>
+							{
+								TECH
+							}
+						</p>
+					</div>
+				</header>
+
+				<section
+					class="mt-4 text-gray-700 leading-relaxed text-center md:text-start"
+				>
+					<p
+					>
+						{
+							DESC
+						}
+					</p>
+				</section>
+			</main>
+		</AnimatedBackground>
+	</body>
+</html>
