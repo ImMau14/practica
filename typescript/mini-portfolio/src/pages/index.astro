@@ -3,15 +3,14 @@ import "@styles/main.css"
 import { AnimatedBackground } from "@components/AnimatedBackground"
 import { AvatarPhoto } from "@components/AvatarPhoto"
 
-const PAGE_TITLE = "ImMau14"
-const NAME = "Mauricio Rodríguez"
-const TECH =
-	"Python | TypeScript | Rust | Actix-web | React | TailwindCSS | Astro | SQL"
-const DESC =
-	"I am a 20-year-old systems engineering student, passionate about programming, with other hobbies such as drawing, working out, and listening to music. I hope to become a great Full-Stack Developer."
+import { FaPython, FaRust, FaReact } from "react-icons/fa"
+import { BiLogoTypescript, BiLogoTailwindCss } from "react-icons/bi"
+import { SiActix, SiAstro, SiSqlite } from "react-icons/si"
+
+const techStyles = "flex flex-col items-center hover:text-gray-400 duration-100"
 ---
 
-<html lang="es" class="h-full">
+<html lang="en" class="h-full">
 	<head
 	>
 		<meta
@@ -32,21 +31,15 @@ const DESC =
 		/>
 		<meta
 			name="description"
-			content={DESC}
+			content="I am a 20-year-old systems engineering student, passionate about programming, with other hobbies such as drawing, working out, and listening to music."
 		/>
 		<meta
 			name="theme-color"
 			content="#f3f3f3"
 		/>
-		<meta
-			name="description"
-			content={DESC}
-		/>
 		<title
 		>
-			{
-				PAGE_TITLE
-			}
+			ImMau14
 		</title>
 	</head>
 	<body
@@ -60,7 +53,7 @@ const DESC =
 				class="w-full max-w-2xl mx-auto px-4 sm:px-6 bg-gray-200/40 backdrop-blur rounded-xl shadow-md border border-gray-300/30 p-6 md:p-10"
 			>
 				<header
-					class="flex flex-col items-center md:flex-row gap-6"
+					class="flex flex-col items-center md:flex-row gap-4 md:gap-6"
 				>
 					<AvatarPhoto
 						className="h-32 w-32 rounded-full shrink-0"
@@ -72,28 +65,102 @@ const DESC =
 						<h1
 							class="text-3xl md:text-4xl font-heading font-semibold text-gray-800 tracking-wide"
 						>
-							{
-								NAME
-							}
+							Mauricio
+							Rodríguez
 						</h1>
-						<p
-							class="text-sm text-gray-600"
+						<ul
+							class="text-xl text-gray-600 flex flex-row gap-2 items-center"
 						>
-							{
-								TECH
-							}
-						</p>
+							<li
+								class={techStyles}
+							>
+								<FaPython
+								/>
+							</li>
+							<li
+								class={techStyles}
+							>
+								<BiLogoTypescript
+								/>
+							</li>
+							<li
+								class={techStyles}
+							>
+								<FaRust
+								/>
+							</li>
+							<li
+								class={techStyles}
+							>
+								<SiActix
+								/>
+							</li>
+							<li
+								class={techStyles}
+							>
+								<FaReact
+								/>
+							</li>
+							<li
+								class={techStyles}
+							>
+								<BiLogoTailwindCss
+								/>
+							</li>
+							<li
+								class={techStyles}
+							>
+								<SiAstro
+								/>
+							</li>
+							<li
+								class={techStyles}
+							>
+								<SiSqlite
+								/>
+							</li>
+						</ul>
 					</div>
 				</header>
 
 				<section
-					class="mt-4 text-gray-700 leading-relaxed text-center md:text-start"
+					class="mt-4 text-gray-700 leading-relaxed text-center md:text-start flex flex-col gap-4"
 				>
 					<p
 					>
-						{
-							DESC
-						}
+						I
+						am
+						a
+						20-year-old
+						systems
+						engineering
+						student,
+						passionate
+						about
+						programming,
+						with
+						other
+						hobbies
+						such
+						as
+						drawing,
+						working
+						out,
+						and
+						listening
+						to
+						music.
+					</p>
+					<p
+					>
+						I
+						hope
+						to
+						become
+						a
+						great
+						Full-Stack
+						Developer.
 					</p>
 				</section>
 			</main>
