@@ -35,6 +35,12 @@ export default defineConfig({
 						import.meta.url
 					)
 				),
+				"@layouts": fileURLToPath(
+					new URL(
+						"./src/layouts",
+						import.meta.url
+					)
+				),
 			},
 		},
 	},

@@ -1,6 +1,6 @@
 ---
-import "@styles/main.css"
-import { AnimatedBackground } from "@components/AnimatedBackground"
+import BaseLayout from "@layouts/BaseLayout.astro"
+
 import { AvatarPhoto } from "@components/AvatarPhoto"
 
 import { FaPython, FaRust, FaReact } from "react-icons/fa"
@@ -11,167 +11,123 @@ import { MdPermPhoneMsg } from "react-icons/md"
 const techStyles = "flex flex-col items-center hover:text-gray-400 duration-100"
 ---
 
-<html lang="en" class="h-full">
-	<head
+<BaseLayout>
+	<a
+		class="absolute top-6 right-6 hover:text-black text-xl text-gray-600 hover:bg-gray-400/40 rounded-md p-[0.2rem] duration-100"
+		href="/contact"
 	>
-		<meta
-			charset="utf-8"
+		<MdPermPhoneMsg
 		/>
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="/favicon.svg"
-		/>
-		<meta
-			name="viewport"
-			content="width=device-width,initial-scale=1"
-		/>
-		<meta
-			name="generator"
-			content={Astro.generator}
-		/>
-		<meta
-			name="description"
-			content="I am a 20-year-old systems engineering student, passionate about programming, with other hobbies such as drawing, working out, and listening to music."
-		/>
-		<meta
-			name="theme-color"
-			content="#f3f3f3"
-		/>
-		<title
-		>
-			ImMau14
-		</title>
-	</head>
-	<body
-		class="min-h-screen bg-gray-50"
+	</a>
+	<header
+		class="flex flex-col items-center md:flex-row gap-4 md:gap-6"
 	>
-		<AnimatedBackground
-			className="min-h-screen flex items-center justify-center p-6"
+		<AvatarPhoto
+			className="h-32 w-32 rounded-full shrink-0"
 			client:load
+		/>
+		<div
+			class="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-2"
 		>
-			<main
-				class="relative w-full max-w-2xl mx-auto px-4 sm:px-6 bg-gray-200/40 backdrop-blur rounded-xl shadow-md border border-gray-300/30 p-6 md:p-10"
+			<h1
+				class="text-3xl md:text-4xl font-heading font-semibold text-gray-800 tracking-wide"
 			>
-				<a
-					class="absolute top-6 right-6 hover:text-black text-xl text-gray-600 hover:bg-gray-400/40 rounded-md p-[0.2rem] duration-100"
-					href="/contact"
+				Mauricio
+				Rodríguez
+			</h1>
+			<ul
+				class="text-xl text-gray-600 flex flex-row gap-2 items-center"
+			>
+				<li
+					class={techStyles}
 				>
-					<MdPermPhoneMsg
+					<FaPython
 					/>
-				</a>
-				<header
-					class="flex flex-col items-center md:flex-row gap-4 md:gap-6"
+				</li>
+				<li
+					class={techStyles}
 				>
-					<AvatarPhoto
-						className="h-32 w-32 rounded-full shrink-0"
-						client:load
+					<BiLogoTypescript
 					/>
-					<div
-						class="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-2"
-					>
-						<h1
-							class="text-3xl md:text-4xl font-heading font-semibold text-gray-800 tracking-wide"
-						>
-							Mauricio
-							Rodríguez
-						</h1>
-						<ul
-							class="text-xl text-gray-600 flex flex-row gap-2 items-center"
-						>
-							<li
-								class={techStyles}
-							>
-								<FaPython
-								/>
-							</li>
-							<li
-								class={techStyles}
-							>
-								<BiLogoTypescript
-								/>
-							</li>
-							<li
-								class={techStyles}
-							>
-								<FaRust
-								/>
-							</li>
-							<li
-								class={techStyles}
-							>
-								<SiActix
-								/>
-							</li>
-							<li
-								class={techStyles}
-							>
-								<FaReact
-								/>
-							</li>
-							<li
-								class={techStyles}
-							>
-								<BiLogoTailwindCss
-								/>
-							</li>
-							<li
-								class={techStyles}
-							>
-								<SiAstro
-								/>
-							</li>
-							<li
-								class={techStyles}
-							>
-								<SiSqlite
-								/>
-							</li>
-						</ul>
-					</div>
-				</header>
+				</li>
+				<li
+					class={techStyles}
+				>
+					<FaRust
+					/>
+				</li>
+				<li
+					class={techStyles}
+				>
+					<SiActix
+					/>
+				</li>
+				<li
+					class={techStyles}
+				>
+					<FaReact
+					/>
+				</li>
+				<li
+					class={techStyles}
+				>
+					<BiLogoTailwindCss
+					/>
+				</li>
+				<li
+					class={techStyles}
+				>
+					<SiAstro
+					/>
+				</li>
+				<li
+					class={techStyles}
+				>
+					<SiSqlite
+					/>
+				</li>
+			</ul>
+		</div>
+	</header>
 
-				<section
-					class="mt-4 text-gray-700 leading-relaxed text-center md:text-start flex flex-col gap-4"
-				>
-					<p
-					>
-						I
-						am
-						a
-						20-year-old
-						systems
-						engineering
-						student,
-						passionate
-						about
-						programming,
-						with
-						other
-						hobbies
-						such
-						as
-						drawing,
-						working
-						out,
-						and
-						listening
-						to
-						music.
-					</p>
-					<p
-					>
-						I
-						hope
-						to
-						become
-						a
-						great
-						Full-Stack
-						Developer.
-					</p>
-				</section>
-			</main>
-		</AnimatedBackground>
-	</body>
-</html>
+	<section
+		class="mt-4 text-gray-700 leading-relaxed text-center md:text-start flex flex-col gap-4"
+	>
+		<p
+		>
+			I
+			am
+			a
+			20-year-old
+			systems
+			engineering
+			student,
+			passionate
+			about
+			programming,
+			with
+			other
+			hobbies
+			such
+			as
+			drawing,
+			working
+			out,
+			and
+			listening
+			to
+			music.
+		</p>
+		<p
+		>
+			I
+			hope
+			to
+			become
+			a
+			great
+			Full-Stack
+			Developer.
+		</p>
+	</section>
+</BaseLayout>
