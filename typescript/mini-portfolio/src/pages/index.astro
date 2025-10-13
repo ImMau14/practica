@@ -17,127 +17,46 @@ const techStyles = "flex flex-col items-center hover:text-gray-400 duration-100"
 		href="/contact"
 		aria-label="Contact"
 	>
-		<MdPermPhoneMsg
-			client:load
-		/>
+		<MdPermPhoneMsg client:load />
 	</a>
-	<header
-		class="flex flex-col items-center md:flex-row gap-4 md:gap-6"
-	>
-		<AvatarPhoto
-			className="h-32 w-32 rounded-full shrink-0"
-			client:load
-		/>
-		<div
-			class="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-2"
-		>
-			<h1
-				class="text-3xl md:text-4xl font-heading font-semibold text-gray-800 tracking-wide"
-			>
-				Mauricio
-				Rodríguez
-			</h1>
-			<ul
-				class="text-xl text-gray-600 flex flex-row gap-2 items-center"
-			>
-				<li
-					class={techStyles}
-				>
-					<FaPython
-						client:load
-					/>
+	<header class="flex flex-col items-center md:flex-row gap-4 md:gap-6">
+		<AvatarPhoto className="h-32 w-32 rounded-full shrink-0" client:load />
+		<div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-2">
+			<h1 class="text-3xl md:text-4xl font-heading font-semibold text-gray-800 tracking-wide">Mauricio Rodríguez</h1>
+			<ul class="text-xl text-gray-600 flex flex-row gap-2 items-center">
+				<li class={techStyles}>
+					<FaPython client:load />
 				</li>
-				<li
-					class={techStyles}
-				>
-					<BiLogoTypescript
-						client:load
-					/>
+				<li class={techStyles}>
+					<BiLogoTypescript client:load />
 				</li>
-				<li
-					class={techStyles}
-				>
-					<FaRust
-						client:load
-					/>
+				<li class={techStyles}>
+					<FaRust client:load />
 				</li>
-				<li
-					class={techStyles}
-				>
-					<SiActix
-						client:load
-					/>
+				<li class={techStyles}>
+					<SiActix client:load />
 				</li>
-				<li
-					class={techStyles}
-				>
-					<FaReact
-						client:load
-					/>
+				<li class={techStyles}>
+					<FaReact client:load />
 				</li>
-				<li
-					class={techStyles}
-				>
-					<BiLogoTailwindCss
-						client:load
-					/>
+				<li class={techStyles}>
+					<BiLogoTailwindCss client:load />
 				</li>
-				<li
-					class={techStyles}
-				>
-					<SiAstro
-						client:load
-					/>
+				<li class={techStyles}>
+					<SiAstro client:load />
 				</li>
-				<li
-					class={techStyles}
-				>
-					<SiSqlite
-						client:load
-					/>
+				<li class={techStyles}>
+					<SiSqlite client:load />
 				</li>
 			</ul>
 		</div>
 	</header>
 
-	<section
-		class="mt-4 text-gray-700 leading-relaxed text-center md:text-start flex flex-col gap-4"
-	>
-		<p
-		>
-			I
-			am
-			a
-			20-year-old
-			systems
-			engineering
-			student,
-			passionate
-			about
-			programming,
-			with
-			other
-			hobbies
-			such
-			as
-			drawing,
-			working
-			out,
-			and
-			listening
-			to
-			music.
+	<section class="mt-4 text-gray-700 leading-relaxed text-center md:text-start flex flex-col gap-4">
+		<p>
+			I am a 20-year-old systems engineering student, passionate about programming, with other hobbies such as drawing,
+			working out, and listening to music.
 		</p>
-		<p
-		>
-			I
-			hope
-			to
-			become
-			a
-			great
-			Full-Stack
-			Developer.
-		</p>
+		<p>I hope to become a great Full-Stack Developer.</p>
 	</section>
 </BaseLayout>

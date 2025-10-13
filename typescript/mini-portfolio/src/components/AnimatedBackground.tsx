@@ -6,14 +6,9 @@ interface AnimatedBackgroundProps {
 	className?: string
 }
 
-export const AnimatedBackground = ({
-	children,
-	className = "",
-}: AnimatedBackgroundProps) => {
+export const AnimatedBackground = ({ children, className = "" }: AnimatedBackgroundProps) => {
 	return (
-		<div
-			className={` ${className} relative overflow-hidden`}
-		>
+		<div className={` ${className} relative overflow-hidden`}>
 			<video
 				autoPlay
 				muted
@@ -21,19 +16,10 @@ export const AnimatedBackground = ({
 				className="-z-1 absolute h-full w-auto object-cover opacity-40 md:h-auto md:w-full"
 				aria-hidden="true"
 			>
-				<source
-					src={
-						BgWebm
-					}
-					type="video/webm"
-				/>
+				<source src={BgWebm} type="video/webm" />
 			</video>
 
-			<div className="relative z-0">
-				{
-					children
-				}
-			</div>
+			<div className="relative z-0">{children}</div>
 		</div>
 	)
 }

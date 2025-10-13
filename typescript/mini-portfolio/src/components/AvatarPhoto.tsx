@@ -5,15 +5,5 @@ interface AvatarPhotoProps {
 }
 
 export const AvatarPhoto = ({ className = "" }: AvatarPhotoProps) => {
-	return (
-		<img
-			src={
-				Avatar.src
-			}
-			alt="Avatar photo"
-			className={
-				className
-			}
-		/>
-	)
+	return <img src={Avatar.src} alt="Avatar photo" className={className} />
 }

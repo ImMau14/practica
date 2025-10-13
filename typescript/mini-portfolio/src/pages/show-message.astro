@@ -9,20 +9,12 @@ import ShowMessage from "../components/ShowMessage.tsx"
 		class="absolute top-6 left-6 hover:text-black text-xl text-gray-600 hover:bg-gray-400/40 rounded-md p-[0.2rem] duration-100"
 		href="/"
 	>
-		<IoMdArrowRoundBack
-			client:load
-		/>
+		<IoMdArrowRoundBack client:load />
 	</a>
 
-	<div
-		class="flex items-start"
-	>
-		<div
-			client:load
-		>
-			<ShowMessage
-				client:load
-			/>
+	<div class="flex items-start">
+		<div client:load>
+			<ShowMessage client:load />
 		</div>
 	</div>
 </BaseLayout>
