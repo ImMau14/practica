@@ -6,6 +6,7 @@ import { AvatarPhoto } from "@components/AvatarPhoto"
 import { FaPython, FaRust, FaReact } from "react-icons/fa"
 import { BiLogoTypescript, BiLogoTailwindCss } from "react-icons/bi"
 import { SiActix, SiAstro, SiSqlite } from "react-icons/si"
+import { MdPermPhoneMsg } from "react-icons/md"
 
 const techStyles = "flex flex-col items-center hover:text-gray-400 duration-100"
 ---
@@ -50,8 +51,15 @@ const techStyles = "flex flex-col items-center hover:text-gray-400 duration-100"
 			client:load
 		>
 			<main
-				class="w-full max-w-2xl mx-auto px-4 sm:px-6 bg-gray-200/40 backdrop-blur rounded-xl shadow-md border border-gray-300/30 p-6 md:p-10"
+				class="relative w-full max-w-2xl mx-auto px-4 sm:px-6 bg-gray-200/40 backdrop-blur rounded-xl shadow-md border border-gray-300/30 p-6 md:p-10"
 			>
+				<a
+					class="absolute top-6 right-6 hover:text-black text-xl text-gray-600 hover:bg-gray-400/40 rounded-md p-[0.2rem] duration-100"
+					href="/contact"
+				>
+					<MdPermPhoneMsg
+					/>
+				</a>
 				<header
 					class="flex flex-col items-center md:flex-row gap-4 md:gap-6"
 				>
