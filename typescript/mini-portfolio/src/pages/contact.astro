@@ -1,0 +1,28 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { ContactForm } from "@components/ContactForm"
+import { IoMdArrowRoundBack } from "react-icons/io"
+---
+
+<BaseLayout title="Contact - ImMau14">
+	<a
+		class="absolute top-6 left-6 hover:text-black text-xl text-gray-600 hover:bg-gray-400/40 rounded-md p-[0.2rem] duration-100"
+		href="/"
+	>
+		<IoMdArrowRoundBack
+			client:load
+		/>
+	</a>
+
+	<div
+		class="md:w-[400px]"
+	>
+		<div
+			client:load
+		>
+			<ContactForm
+				client:load
+			/>
+		</div>
+	</div>
+</BaseLayout>
