@@ -1,4 +1,5 @@
 # [Mini Portfolio XSS](https://miniportfolioxss.vercel.app)
+
 ![](https://img.shields.io/badge/Astro-1d0556?style=flat&logo=astro)
 ![](https://img.shields.io/badge/TailwindCSS-054456?style=flat&logo=tailwindcss)
 ![](https://img.shields.io/badge/React-052d56?style=flat&logo=react)
@@ -9,7 +10,6 @@ A minimalist portfolio that implements protection against XSS attacks. [Live pre
 ---
 
 [<img width="1024" height="600" alt="image" src="https://github.com/user-attachments/assets/2a191baa-ffac-4ba0-90f8-6f3321852bb7" />](https://miniportfolioxss.vercel.app)
-
 
 ---
 
