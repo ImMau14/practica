@@ -14,3 +14,7 @@ Ejercicios de practica.
 
 * [Cashier](./rust/cashier)
 * [Sorting](./rust/Sorting) (Solo inglés)
+
+## TypeScript
+
+* [Mini Portfolio](./typescript/mini-portfolio) (Solo inglés)

@@ -14,3 +14,7 @@ Exercises I do to practice.
 
 * [Cashier](./rust/cashier)
 * [Sorting](./rust/Sorting)
+
+## TypeScript
+
+* [Mini Portfolio](./typescript/mini-portfolio)
